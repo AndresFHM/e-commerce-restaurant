@@ -12,6 +12,7 @@ const Gallery = () => {
   const scrollRef = React.useRef(null);
   const scroll = (direction) => {
     const { current } = scrollRef;
+
     if (direction === 'left') {
       current.scrollLeft -= 300;
     } else {
@@ -24,14 +25,14 @@ const Gallery = () => {
       <div className='app__gallery-content'>
         <SubHeading title='Instagram' />
         <h1 className='headtext__cormorant'>Photo Gallery</h1>
-        <p className='p__opensans' style={{ color: '#AAA', marginTop: '2rem' }}></p>
+        <p className='p__opensans' style={{ color: '#AAA', marginTop: '2rem' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio ea fuga enim eveniet minus ex modi.</p>
         <button type='button' className='custom__button'>View More</button>
       </div>
       <div className='app__gallery-images'>
         <div className='app__gallery-images_container' ref={scrollRef}>
           {galleryImages.map((image, index) => (
             <div className='app__gallery-images_card flex__center' key={`gallery_image-${index+1}`}>
-              <img src={image} alt='gallery' />
+              <img src={image} alt='gallery_image' />
               <BsInstagram className='gallery__image-icon' />
             </div>  
           ))}
